@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Year 12 PE IA2 Feedback Coach</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f5f9;
+    margin:0;
+    padding:0;
+}
+
+header{
+    background:#003366;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom:25px;
+}
+
+textarea{
+    width:100%;
+    min-height:250px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:10px;
+    font-size:15px;
+}
+
+select{
+    padding:10px;
+    border-radius:6px;
+}
+
+button{
+    background:#0066cc;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+button:hover{
+    background:#004a99;
+}
+
+.feedback{
+    background:#eef5ff;
+    padding:20px;
+    border-radius:10px;
+    margin-top:20px;
+    white-space:pre-wrap;
+}
+
+.warning{
+    color:red;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Year 12 Physical Education IA2 Feedback Coach</h1>
+<p>Feedback Coach Only • No Assessment Writing • Academic Integrity Protected</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Submit Work for Feedback</h2>
+
+<label>Select Section</label>
+
+<br><br>
+
+<select id="section">
+<option>Full Draft</option>
+<option>Introduction</option>
+<option>Analysis</option>
+<option>Justification</option>
+<option>Evaluation</option>
+<option>Conclusion</option>
+<option>References</option>
+</select>
+
+<br><br>
+
+<textarea id="studentWork"
+placeholder="Paste your section here..."></textarea>
+
+<button onclick="generateFeedback()">
+Review My Work
+</button>
+
+<div id="feedback" class="feedback"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Ask a Question</h2>
+
+<p>
+Ask about improving your work.
+The coach will not write assessment content.
+</p>
+
+<textarea id="question"
+placeholder="Example: How can I strengthen my stakeholder analysis?"></textarea>
+
+<button onclick="askQuestion()">
+Ask Question
+</button>
+
+<div id="answer" class="feedback"></div>
+
+</div>
+
+</div>
+
+<script>
+
+function generateFeedback(){
+
+let text =
+document.getElementById("studentWork").value;
+
+if(text.length < 100){
+
+document.getElementById("feedback").innerHTML =
+"<span class='warning'>Please paste more of your work before requesting feedback.</span>";
+
+return;
+}
+
+let feedback = `
+OVERALL JUDGEMENT
+
+Your work demonstrates engagement with the IA2 requirements. Continue checking that every paragraph contributes directly to the ethical dilemma and links to integrity, fair play or stakeholder influence.
+
+-----------------------------------
+
+ETHICAL DILEMMA CHECK
+
+• Is there a genuine conflict between values, responsibilities or principles?
+
+• Is the discussion centred on ethics rather than only equity or access?
+
+• Does the dilemma remain central throughout the section?
+
+-----------------------------------
+
+ISMG FEEDBACK
+
+EXPLAINING
+
+Demonstrated:
+• Relevant ideas appear to be identified.
+
+Gap:
+• Ensure ethics, values, integrity and fair play are clearly explained in relation to your context.
+
+Next Action:
+• Review where these concepts are explicitly connected to the dilemma.
+
+Reflection Question:
+• Which competing values make this dilemma difficult?
+
+-----------------------------------
+
+ANALYSING
+
+Demonstrated:
+• Evidence appears to have been included.
+
+Gap:
+• Check whether evidence is interpreted rather than simply described.
+
+Next Action:
+• Explain what each piece of evidence shows and why it matters.
+
+Reflection Question:
+• What relationships exist between stakeholders and the dilemma?
+
+-----------------------------------
+
+JUSTIFYING
+
+Demonstrated:
+• A strategy may be identifiable.
+
+Gap:
+• Ensure each part of the strategy is supported by evidence.
+
+Next Action:
+• Link evidence to every strategic decision.
+
+Reflection Question:
+• Why was this strategy selected?
+
+-----------------------------------
+
+EVALUATING
+
+Demonstrated:
+• Potential outcomes are considered.
+
+Gap:
+• Limitations often need deeper discussion.
+
+Next Action:
+• Examine practical challenges and unintended consequences.
+
+Reflection Question:
+• What might reduce the effectiveness of the strategy?
+
+-----------------------------------
+
+COMMUNICATING
+
+Demonstrated:
+• Formal report style appears evident.
+
+Gap:
+• Review consistency of technical language.
+
+Next Action:
+• Check report conventions and visual presentation.
+
+Reflection Question:
+• Could a PE teacher clearly follow your reasoning?
+
+-----------------------------------
+
+REPORT STRUCTURE CHECK
+
+✓ Introduction
+
+✓ Analysis
+
+✓ Justification
+
+✓ Evaluation
+
+✓ Conclusion
+
+✓ Appendix
+
+✓ Bibliography
+
+Check that all sections are included and appropriately balanced.
+
+-----------------------------------
+
+APA 7 CHECK
+
+Review:
+
+• In-text citations
+
+• Author-date format
+
+• Reference list consistency
+
+• Alphabetical ordering
+
+• Matching citations and references
+
+-----------------------------------
+
+REVISION PRIORITIES
+
+1. Keep the ethical dilemma central.
+
+2. Strengthen analysis of evidence.
+
+3. Better connect stakeholders to
